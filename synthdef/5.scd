@@ -28,8 +28,8 @@ SynthDef.new(\reverb, {
 }).add;
 )
 
-(g = Group.new;)
 (~reverbBus = Bus.audio(s, 2);)
+(g = Group.new;)
 (r = Synth.new(\reverb, [\in, ~reverbBus, \out, 0],g);)
 
 (a = Synth.new(\pbuf, [\buf, ~barry[0], \rate, 1.0, \loop, 1, \out, 0, \amp, 0.9],g);)

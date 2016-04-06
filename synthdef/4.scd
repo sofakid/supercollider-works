@@ -29,9 +29,9 @@ SynthDef.new(\reverb, {
 	Out.ar(out, sig);
 }).add;
 )
-(g = Group.new;)
 (~reverbBus = Bus.audio(s, 2);)
 (~reverbBus2 = Bus.audio(s, 4);)
+(g = Group.new;)
 (r = Synth.new(\reverb, [\in, ~reverbBus, \out, 0],g);)
 (s = Synth.new(\reverb, [\in, ~reverbBus2, \out, 0],g);)
 
@@ -52,4 +52,5 @@ SynthDef.new(\reverb, {
 (z.release(20);)
 (y.release(10);)
 (a.release(20);)
+
 (g.free;)

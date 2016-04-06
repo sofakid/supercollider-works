@@ -2,16 +2,13 @@
 s.reboot;s.meter;
 )
 (
-    g = Group.new;
-)
-(
 ~barry = Array.new;
 ~folder = PathName.new("~/producing/feb22-2016/n/");
 )
 (
 ~folder.entries.do({
-	arg path;
-	~barry = ~barry.add(Buffer.read(s, path.fullPath));
+arg path;
+~barry = ~barry.add(Buffer.read(s, path.fullPath));
 });
 )
 (
@@ -20,8 +17,8 @@ SynthDef.new(\pbuf,{
 	var sig;
 	sig = PlayBuf.ar(2, buf, BufRateScale.kr(buf) * rate, t_trig, start, loop, doneAction: da);
 	sig = [sig, sig] * amp;
-  sig = LPF.ar(sig, freq: lpf);
-  sig = HPF.ar(sig, freq: hpf);
+	sig = LPF.ar(sig, freq: lpf);
+	sig = HPF.ar(sig, freq: hpf);
 	Out.ar(out, sig * EnvGen.kr(Env.asr(attackTime:att, curve: 1), gate, doneAction:2));
 }).add;
 SynthDef.new(\pbufmono,{
@@ -29,8 +26,8 @@ SynthDef.new(\pbufmono,{
 	var sig;
 	sig = PlayBuf.ar(1, buf, BufRateScale.kr(buf) * rate, t_trig, start, loop, doneAction: da);
 	sig = [sig, sig] * amp;
-  sig = LPF.ar(sig, freq: lpf);
-  sig = HPF.ar(sig, freq: hpf);
+	sig = LPF.ar(sig, freq: lpf);
+	sig = HPF.ar(sig, freq: hpf);
 	Out.ar(out, sig * EnvGen.kr(Env.asr(attackTime:att, curve: 1), gate, doneAction:2));
 }).add;
 SynthDef.new(\pgrain, {
@@ -51,6 +48,7 @@ SynthDef.new(\reverb, {
 )
 (~reverbBus = Bus.audio(s, 2);)
 (~reverbBus2 = Bus.audio(s, 4);)
+(g = Group.new;)
 (r = Synth.new(\reverb, [\in, ~reverbBus],g);)
 (s = Synth.new(\reverb, [\in, ~reverbBus2],g);)
 
@@ -68,7 +66,6 @@ SynthDef.new(\reverb, {
 (y.release(10);)
 (x.release(10);)
 (z.release(20);)
-
 
 (
 ~barry[0]; //stereo

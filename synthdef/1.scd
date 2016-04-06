@@ -8,8 +8,8 @@ s.meter;
 )
 (
 ~folder.entries.do({
-	arg path;
-	~barry = ~barry.add(Buffer.read(s, path.fullPath));
+arg path;
+~barry = ~barry.add(Buffer.read(s, path.fullPath));
 });
 )
 (
