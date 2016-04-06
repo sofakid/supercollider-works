@@ -17,8 +17,8 @@ SynthDef.new(\pbuf,{
 	var sig;
 	sig = PlayBuf.ar(2, buf, BufRateScale.kr(buf) * rate, t_trig, start, loop, doneAction: da);
 	sig = [sig, sig] * amp;
-  sig = LPF.ar(sig, freq: lpf);
-  sig = HPF.ar(sig, freq: hpf);
+	sig = LPF.ar(sig, freq: lpf);
+	sig = HPF.ar(sig, freq: hpf);
 	Out.ar(out, sig * EnvGen.kr(Env.asr(attackTime:att, curve: 1), gate, doneAction:2));
 }).add;
 SynthDef.new(\reverb, {
