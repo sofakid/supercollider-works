@@ -1,6 +1,5 @@
 (
-s.reboot;
-s.meter;
+s.reboot;s.meter;
 )
 (
 ~barry = Array.new;
@@ -14,13 +13,13 @@ arg path;
 )
 (
 SynthDef.new(\playb,{
-	arg amp=1, out=0, buf, t_trig=1, start=0, loop=0, rate=1, da=2, att=10, gate=1, lpf=1000, hpf=100;
-	var sig;
-	sig = PlayBuf.ar(2, buf, BufRateScale.kr(buf) * rate, t_trig, start, loop, doneAction: da);
-	sig = sig * amp;
-	sig = LPF.ar(sig, freq: lpf);
-	sig = HPF.ar(sig, freq: hpf);
-	Out.ar(out, sig * EnvGen.kr(Env.asr(attackTime:att, curve: 1), gate, doneAction:2));
+  arg amp=1, out=0, buf, t_trig=1, start=0, loop=0, rate=1, da=2, att=10, gate=1, lpf=1000, hpf=100;
+  var sig;
+  sig = PlayBuf.ar(2, buf, BufRateScale.kr(buf) * rate, t_trig, start, loop, doneAction: da);
+  sig = sig * amp;
+  sig = LPF.ar(sig, freq: lpf);
+  sig = HPF.ar(sig, freq: hpf);
+  Out.ar(out, sig * EnvGen.kr(Env.asr(attackTime:att, curve: 1), gate, doneAction:2));
 }).add;
 )
 (g = Group.new;)

@@ -7,26 +7,26 @@ s.reboot;s.meter;
 )
 (
 ~folder.entries.do({
-	arg path;
-	~barry = ~barry.add(Buffer.read(s, path.fullPath));
+arg path;
+~barry = ~barry.add(Buffer.read(s, path.fullPath));
 });
 )
 (
 SynthDef.new(\pbuf,{
-	arg amp=1, out=0, buf, t_trig=1, start=0, loop=0, rate=1, da=2, gate=1, att=10.0, lpf=2000, hpf=1000;
-	var sig;
-	sig = PlayBuf.ar(2, buf, BufRateScale.kr(buf) * rate, t_trig, start, loop, doneAction: da);
-	sig = [sig, sig] * amp;
-	sig = LPF.ar(sig, freq: lpf);
-	sig = HPF.ar(sig, freq: hpf);
-	Out.ar(out, sig * EnvGen.kr(Env.asr(attackTime:att, curve: 1), gate, doneAction:2));
+  arg amp=1, out=0, buf, t_trig=1, start=0, loop=0, rate=1, da=2, gate=1, att=10.0, lpf=2000, hpf=1000;
+  var sig;
+  sig = PlayBuf.ar(2, buf, BufRateScale.kr(buf) * rate, t_trig, start, loop, doneAction: da);
+  sig = [sig, sig] * amp;
+  sig = LPF.ar(sig, freq: lpf);
+  sig = HPF.ar(sig, freq: hpf);
+  Out.ar(out, sig * EnvGen.kr(Env.asr(attackTime:att, curve: 1), gate, doneAction:2));
 }).add;
 SynthDef.new(\reverb, {
-	arg in, out=0;
-	var sig;
-	sig = In.ar(in, 2);
-	sig = FreeVerb.ar(sig, 0.5, 1.0, 1.0);
-	Out.ar(out, sig);
+  arg in, out=0;
+  var sig;
+  sig = In.ar(in, 2);
+  sig = FreeVerb.ar(sig, 0.5, 1.0, 1.0);
+  Out.ar(out, sig);
 }).add;
 )
 (~reverbBus = Bus.audio(s, 2);)

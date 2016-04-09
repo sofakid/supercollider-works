@@ -13,22 +13,22 @@ arg path;
 )
 (
 SynthDef.new(\pbuf,{
-	arg amp=1, out=0, buf, t_trig=1, start=0, loop=0, rate=1, da=2, gate=1, att=10.0, lpf=2000, hpf=1000;
-	var sig;
-	sig = PlayBuf.ar(2, buf, BufRateScale.kr(buf) * rate, t_trig, start, loop, doneAction: da);
-	sig = [sig, sig] * amp;
-	sig = LPF.ar(sig, freq: lpf);
-	sig = HPF.ar(sig, freq: hpf);
-	Out.ar(out, sig * EnvGen.kr(Env.asr(attackTime:att, curve: 1), gate, doneAction:2));
-}).add;
-SynthDef.new(\pbufmono,{
-	arg amp=1, out=0, buf, t_trig=1, start=0, loop=0, rate=1, da=2, gate=1, att=10.0, lpf=2000, hpf=1000;
-	var sig;
-	sig = PlayBuf.ar(1, buf, BufRateScale.kr(buf) * rate, t_trig, start, loop, doneAction: da);
-	sig = [sig, sig] * amp;
+  arg amp=1, out=0, buf, t_trig=1, start=0, loop=0, rate=1, da=2, gate=1, att=10.0, lpf=2000, hpf=1000;
+  var sig;
+  sig = PlayBuf.ar(2, buf, BufRateScale.kr(buf) * rate, t_trig, start, loop, doneAction: da);
+  sig = [sig, sig] * amp;
   sig = LPF.ar(sig, freq: lpf);
   sig = HPF.ar(sig, freq: hpf);
-	Out.ar(out, sig * EnvGen.kr(Env.asr(attackTime:att, curve: 1), gate, doneAction:2));
+  Out.ar(out, sig * EnvGen.kr(Env.asr(attackTime:att, curve: 1), gate, doneAction:2));
+}).add;
+SynthDef.new(\pbufmono,{
+  arg amp=1, out=0, buf, t_trig=1, start=0, loop=0, rate=1, da=2, gate=1, att=10.0, lpf=2000, hpf=1000;
+  var sig;
+  sig = PlayBuf.ar(1, buf, BufRateScale.kr(buf) * rate, t_trig, start, loop, doneAction: da);
+  sig = [sig, sig] * amp;
+  sig = LPF.ar(sig, freq: lpf);
+  sig = HPF.ar(sig, freq: hpf);
+  Out.ar(out, sig * EnvGen.kr(Env.asr(attackTime:att, curve: 1), gate, doneAction:2));
 }).add;
 SynthDef.new(\pgrain, {
   arg amp=1, mamp=1, out=0, buf, dur=1, rate=1, trig, cpos, att=10.0, gate=1, lpf=2000, hpf=1000;
@@ -40,11 +40,11 @@ SynthDef.new(\pgrain, {
   Out.ar(out, sig * mamp);
 }).add;
 SynthDef.new(\reverb, {
-	arg in, out=0;
-	var sig;
-	sig = In.ar(in, 2);
-	sig = FreeVerb.ar(sig, 0.5, 1.0, 1.0);
-	Out.ar(out, sig);
+  arg in, out=0;
+  var sig;
+  sig = In.ar(in, 2);
+  sig = FreeVerb.ar(sig, 0.5, 1.0, 1.0);
+  Out.ar(out, sig);
 }).add;
 )
 
