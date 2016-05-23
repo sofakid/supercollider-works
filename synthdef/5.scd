@@ -4,7 +4,7 @@ s.reboot; s.meter;
 
 (
 ~barry = Array.new;
-~folder = PathName.new("/Users/paullucas/Producing/march29th-2016/phrases/mic/chops/ok/sc/s/");
+~folder = PathName.new("~/Producing/march29th-2016/phrases/mic/chops/ok/sc/s/");
 )
 (
 ~folder.entries.do({
