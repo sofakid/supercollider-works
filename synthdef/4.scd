@@ -1,16 +1,18 @@
 (
 s.reboot;s.meter;
 )
+
 (
 ~barry = Array.new;
 ~folder = PathName.new("~/Producing/march15th-2016/rh/1/");
 )
 (
 ~folder.entries.do({
-arg path;
-~barry = ~barry.add(Buffer.read(s, path.fullPath));
+  arg path;
+  ~barry = ~barry.add(Buffer.read(s, path.fullPath));
 });
 )
+
 (
 SynthDef.new(\pbuf,{
   arg amp=1, out=0, buf, t_trig=1, start=0, loop=0, rate=1, da=2, gate=1, att=10.0, lpf=2000, hpf=1000;
@@ -29,6 +31,7 @@ SynthDef.new(\reverb, {
   Out.ar(out, sig);
 }).add;
 )
+
 (~reverbBus = Bus.audio(s, 2);)
 (~reverbBus2 = Bus.audio(s, 4);)
 (g = Group.new;)

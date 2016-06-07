@@ -4,7 +4,7 @@ s.reboot; s.meter;
 
 (
 ~barry = Array.new;
-~folder = PathName.new("~/Producing/may21st-2016/chops/");
+~folder = PathName.new("~/Producing/may21st-2016/piano/c-chop/sc");
 )
 (
 ~folder.entries.do({
@@ -37,22 +37,18 @@ s.reboot; s.meter;
   }).add;
 )
 
-(x = Synth.new(\pbuf, [\buf, ~barry[3], \rate, 0.4, \amp, 0.875]);)
-(y = Synth.new(\pbuf, [\buf, ~barry[1], \rate, 3.0, \att, 40, \amp, 0.7]);)
-(y.release(20))
-(z = Synth.new(\pgrain, [\buf, ~barry[2], \rate, 0.8, \dur, 8, \trig, 0.125, \cpos, 100, \att, 10, \amp, 1.3, \hpf, 70, \lpf, 4000, \room, 0.9, \mix, 0.8]);)
-(y = Synth.new(\pbuf, [\buf, ~barry[1], \rate, 6.0, \att, 40, \amp, 0.7]);)
-(y.release(20))
-(x.set(\rate, 0.25))
-(z.set(\rate, 0.4, \lpf, 2000, \hpf, 50))
-(a = Synth.new(\pbuf, [\buf, ~barry[4], \rate, 2, \amp, 0.875]);)
-(x.release(40))
-(a.set(\rate, 1))
-(z.release(20))
-(b = Synth.new(\sin, [\freq1, 60, \freq2, 50]);)
-(c = Synth.new(\sin, [\freq1, 1600, \freq2, 1800, \amp, 0.085]);)
-(a.set(\rate, 0.5))
-(c.release(20))
-(a.set(\rate, 0.35))
-(a.release(40))
-(b.release(20))
+(x = Synth.new(\pbuf, [\buf, ~barry[1], \rate, 1.0, \amp, 0.9]);)
+(y = Synth.new(\pgrain, [\buf, ~barry[0], \rate, 0.6, \dur, 16, \trig, 0.0625, \cpos, 100, \att, 10, \amp, 1.0, \hpf, 70, \lpf, 400, \room, 0.9, \mix, 0.8]);)
+(z = Synth.new(\sin, [\freq1, 82, \freq2, 80, \amp, 0.25]);)
+(a = Synth.new(\sin, [\freq1, 1082, \freq2, 1080, \amp, 0.1]);)
+(b = Synth.new(\sin, [\freq1, 482, \freq2, 480, \amp, 0.1]);)
+(c = Synth.new(\sin, [\freq1, 322, \freq2, 310, \amp, 0.1]);)
+(a.set(\freq1, 366, \freq2, 364);)
+(b.set(\freq1, 200, \freq2, 210);)
+(b.set(\freq1, 100, \freq2, 110);)
+(z.release(10))
+(x.set(\loop, 0))
+(c.release(10))
+(b.release(10))
+(a.release(10))
+(y.release(10))

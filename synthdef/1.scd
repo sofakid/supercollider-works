@@ -1,18 +1,20 @@
 (
 s.reboot;s.meter;
 )
+
 (
 ~barry = Array.new;
 ~folder = PathName.new("~/producing/duplicates/48/wav/");
 )
 (
 ~folder.entries.do({
-arg path;
-~barry = ~barry.add(Buffer.read(s, path.fullPath));
+  arg path;
+  ~barry = ~barry.add(Buffer.read(s, path.fullPath));
 });
 )
+
 (
-SynthDef.new(\playb,{
+SynthDef.new(\playb, {
   arg amp=1, out=0, buf, t_trig=1, start=0, loop=0, rate=1, da=2, att=10, gate=1, lpf=1000, hpf=100;
   var sig;
   sig = PlayBuf.ar(2, buf, BufRateScale.kr(buf) * rate, t_trig, start, loop, doneAction: da);
@@ -22,7 +24,9 @@ SynthDef.new(\playb,{
   Out.ar(out, sig * EnvGen.kr(Env.asr(attackTime:att, curve: 1), gate, doneAction:2));
 }).add;
 )
+
 (g = Group.new;)
+
 (x = Synth.new(\playb, [\buf, ~barry[1], \da, 0, \rate, 0.4, \start, s.sampleRate/4, \loop, 1, \amp, 2, \out, 0, \lpf, 1500, \hpf, 150], g);)
 (y = Synth.new(\playb, [\buf, ~barry[1], \da, 0, \rate, 0.5, \loop, 1, \out, 0, \att, 1, \lpf, 3000, \hpf, 50], g);)
 (z = Synth.new(\playb, [\buf, ~barry[1], \da, 0, \rate, 0.8, \start, s.sampleRate/8, \loop, 1,\att,1, \amp, 1, \out, 0, \lpf, 2000, \hpf, 40], g);)
