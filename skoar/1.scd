@@ -25,9 +25,16 @@ SynthDef.new(\pbuf,{
 (x = "
 80 => )
 
-.sampler @pbuf => @instrument fff
+.sampler   @pbuf => @instrument 
+.sampler2  @pbuf => @instrument
+.sampler   [#####] => @amp
+.sampler2  [#### ] => @amp
 
-.sampler <-40, -42, -45, -48>.{: (0:10) :}
+.sampler   <-40, -42, -44, -46, -48, -48>.{: (0:10) :}
+.sampler2  <-12, -14, -16, -19, -21, -49>.{: (0:10) :}
+
+.sampler   <-48, -50>.{: (0:30) :}
+.sampler2  <-49, -51>.{: (0:30) :}
 
 ".skoar.play;
 )
