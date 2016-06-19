@@ -3,13 +3,13 @@
 (
 SynthDef("bass", {
   arg freq = 440, gate = 1, amp = 0.5, slideTime = 0.17, ffreq = 1100, width = 0.15, detune = 1.005, preamp = 4;
-    var sig, env;
+  var sig, env;
   env = Env.adsr(0.01, 0.3, 0.4, 0.1);
-    freq = Lag.kr(freq, slideTime);
-    sig = Mix(VarSaw.ar([freq, freq * detune], 0, width, preamp)).distort;
+  freq = Lag.kr(freq, slideTime);
+  sig = Mix(VarSaw.ar([freq, freq * detune], 0, width, preamp)).distort;
   sig = sig * amp * EnvGen.kr(env, gate, doneAction: 2);
-    sig = LPF.ar(sig, ffreq);
-    Out.ar(0, sig ! 2)
+  sig = LPF.ar(sig, ffreq);
+  Out.ar(0, sig ! 2)
 }).add;
 SynthDef(\kick, {
   arg out = 0, freq = 50, mod_freq = 5, mod_index = 5, sustain = 0.4, amp = 0.8, beater_noise_level = 0.025;

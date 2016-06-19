@@ -25,7 +25,7 @@ SynthDef.new(\pbuf,{
 (x = "
 80 => )
 
-.sampler   @pbuf => @instrument 
+.sampler   @pbuf => @instrument
 .sampler2  @pbuf => @instrument
 .sampler   [#####] => @amp
 .sampler2  [#### ] => @amp
