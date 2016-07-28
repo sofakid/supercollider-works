@@ -1,6 +1,8 @@
 # SuperCollider Works
-## Synthdef
-### Compositions
+
+---
+### Synthdef
+#### Compositions
 1.scd - Unreleased
 <br>
 2.scd - Unreleased
@@ -18,19 +20,23 @@
 9.scd - Unreleased
 <br>
 10.scd - Unreleased
-### Sets
+#### Sets
 8.scd
-## Ndef
-### Compositions
+
+---
+### Ndef
+#### Compositions
 1.scd - Unreleased
 <br>
 2.scd - Unreleased
-## Skoar
-### Compositions
+
+---
+### Skoar
+#### Compositions
 2.scd - Unreleased
 <br>
 3.scd - Happy Birthday
-### Misc
+#### Misc
 1.scd - Testing pbuf sequencing
 <br>
 4.scd - Testing synthdefs in Skoar
