@@ -1,6 +1,5 @@
 # SuperCollider Works
 
----
 ### Synthdef
 #### Compositions
 1.scd - Unreleased
