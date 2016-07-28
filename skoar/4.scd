@@ -1,7 +1,7 @@
 ("
-{! pbuf<t_trig:1, start:0, loop:1, freq:1, da:2, gate:1, att:1.0, room:1, mix:1, damp:1, testparam:1, barry> !!
+{! pbuf<t_trig:1, start:0, loop:1, freq:1, da:2, gate:1, att:1.0, room:1, mix:1, damp:1, param:1, barry> !!
 
-sig: aFreeVerb<aPlayBuf<2, !barry.at<0>, kBufRateScale<!barry.at<0>> * !testparam, !t_trig, !start, !loop, doneAction: !da>, !mix, !room, !damp>
+sig: aFreeVerb<aPlayBuf<2, !barry.at<0>, kBufRateScale<!barry.at<0>> * !param, !t_trig, !start, !loop, doneAction: !da>, !mix, !room, !damp>
 
 !sig * kEnvGen<@Env.asr<attackTime:!att, curve: 1>, !gate, doneAction:2>
 
@@ -14,9 +14,9 @@ sig: aFreeVerb<aPlayBuf<2, !barry.at<0>, kBufRateScale<!barry.at<0>> * !testpara
 )
 
 ("
-{! pbuf<t_trig:1, start:0, loop:1, freq:1, da:2, gate:1, att:1.0, room:1, mix:1, damp:1, testparam:1, barry> !!
+{! pbuf<t_trig:1, start:0, loop:1, freq:1, da:2, gate:1, att:1.0, room:1, mix:1, damp:1, param:1, barry> !!
 
-sig: aFreeVerb<aPlayBuf<2, !barry.at<0>, kBufRateScale<!barry.at<0>> * !testparam, !t_trig, !start, !loop, doneAction: !da>, !mix, !room, !damp>
+sig: aFreeVerb<aPlayBuf<2, !barry.at<0>, kBufRateScale<!barry.at<0>> * !param, !t_trig, !start, !loop, doneAction: !da>, !mix, !room, !damp>
 
 !sig * kEnvGen<@Env.asr<attackTime:!att, curve: 1>, !gate, doneAction:2>
 
