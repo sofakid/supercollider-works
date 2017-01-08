@@ -39,7 +39,7 @@ SynthDef(\kick, {
 )
 
 
-(x = "
+("
 180 => )
 
 .bass   instrument:@bass       o~~  mp
@@ -74,7 +74,7 @@ SynthDef(\kick, {
 // it will use the key though, so the root note affects noats..
 // noats assume C scale..
 
-(x = "
+("
 180 => )
 
 .bass   aSaw * aLFNoise2     o~~  mp
@@ -83,7 +83,7 @@ SynthDef(\kick, {
 
 {! razzle<x> !!
 
-          key: <!x, @minorPentatonic>
+   key: <!x, @minorPentatonic>
    .bass  o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
    .bass2 o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
 !}
@@ -104,7 +104,7 @@ SynthDef(\kick, {
 
 
 // see in this one we just do key: !x rather than key: <!x, @minorPentatonic>
-(x = "
+("
 180 => )
 
 .bass   aLFTri * aSaw                o~~  mp
@@ -143,7 +143,7 @@ SynthDef(\kick, {
 // this one doesn't work, but should.
 // the numbers aren't being treated as noatworthy,
 // the fairy is failing in wizzle and wozzle.
-(x = "
+("
 180 => )
 
 .bass   instrument:@bass                o~~  mp
@@ -176,5 +176,3 @@ SynthDef(\kick, {
 
 ".skoar.play;
 )
-
-

@@ -28,7 +28,7 @@ SynthDef("bass", { |freq = 440, gate = 1, amp = 0.5, slideTime = 0.17, ffreq = 1
 }).add;
 )
 
-(x = "
+("
 100 => )
 
 .triangle   instrument:@trianglewavebells o~~ mp
@@ -37,10 +37,13 @@ SynthDef("bass", { |freq = 440, gate = 1, amp = 0.5, slideTime = 0.17, ffreq = 1
 
 key: <C, @major>
 
-.triangle   {: _g ] _g ] _a ) _g ) c ) _b )) _g ] _g ] _a ) _g ) d ) c )) _g ] _g ] g ) e ) c ) _b ) _a ) f ] f ] e ) c ) d ) c )) :}
-.blips      {: _g ] _g ] _a ) _g ) c ) _b )) _g ] _g ] _a ) _g ) d ) c )) _g ] _g ] g ) e ) c ) _b ) _a ) f ] f ] e ) c ) d ) c )) :}
-.bass       {: _g ] _g ] _a ) _g ) c ) _b )) _g ] _g ] _a ) _g ) d ) c )) _g ] _g ] g ) e ) c ) _b ) _a ) f ] f ] e ) c ) d ) c )) :}
+{! seq !!
+   {: _g ] _g ] _a ) _g ) c ) _b )) _g ] _g ] _a ) _g ) d ) c )) _g ] _g ] g ) e ) c ) _b ) _a ) f ] f ] e ) c ) d ) c )) :}
+!}
 
+.triangle   !seq
+.blips      !seq
+.bass       !seq
 ".skoar.play;
 )
 

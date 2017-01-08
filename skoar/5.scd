@@ -1,4 +1,4 @@
-(s.reboot;)
+(s.reboot)
 
 (
 SynthDef("bass", {
@@ -52,7 +52,7 @@ SynthDef("blips", {arg out = 0, freq = 25, numharm = 10, att = 0.01, rel = 1, am
   Out.ar(out, Pan2.ar(snd, pan));
 }).add;)
 
-(x = "
+("
 74 => )
 
 .bass    instrument:@bass               o~~  mp
@@ -64,37 +64,37 @@ SynthDef("blips", {arg out = 0, freq = 25, numharm = 10, att = 0.01, rel = 1, am
 
 key:        <A, @pentatonic>
 
-.bass       {: {: _c# ]] _d ]] :} :: 40 times :}
-.bass2      {: {: b ]] :: 20 times :} {: a ]] :: 20 times :} :}
-.tri        {: {: b ]] :: 20 times :} {: a ]] :: 20 times :} :}
-.tri2       {: {: b ]] :: 20 times :} {: a ]] :: 20 times :} :}
+.bass       {: _c# ]] _d ]] :: 40 times :}
+.bass2      {: b ]] :: 20 times :} {: a ]] :: 20 times :}
+.tri        {: b ]] :: 20 times :} {: a ]] :: 20 times :}
+.tri2       {: b ]] :: 20 times :} {: a ]] :: 20 times :}
 .blips      {: {: b ]]] a ]]] }  :: 5 times :} {: b ]]] _a ]]] :: 5 times :} :: 2 times :}
-.bass2      {: {: a ]] :: 20 times :} {: f# ]] :: 20 times :} :}
-.bass       {: {: e ]] :: 20 times :} {: g ]] :: 20 times :} :}
-.tri  o/    {: {: a ]] :: 20 times :} {: f# ]] :: 20 times :} :}
-.tri2  oo/  {: {: a ]] :: 20 times :} {: f# ]] :: 20 times :} :}
+.bass2      {: a ]] :: 20 times :} {: f# ]] :: 20 times :}
+.bass       {: e ]] :: 20 times :} {: g ]] :: 20 times :}
+.tri     o/ {: a ]] :: 20 times :} {: f# ]] :: 20 times :}
+.tri2   oo/ {: a ]] :: 20 times :} {: f# ]] :: 20 times :}
 .blips      {: {: b ]]. _a ]]] }  :: 5 times :} {: _b ]]] a ]]. :: 5 times :} :: 2 times :}
-.bass2   o/ {: {: _f# ]] :: 20 times :} {: c ]] :: 20 times :} :}
-.tri     o/ {: {: d ]] :: 20 times :} {: e ]] :: 20 times :} :}
-.tri2    o/ {: {: d ]] :: 20 times :} {: e ]] :: 20 times :} :}
-.kick       {: {: ]] ]] oo/ ]]  :: 20 times :}  {: ] oo/ ]] ]]]  :: 10 times :} :}
+.bass2   o/ {: _f# ]] :: 20 times :} {: c ]] :: 20 times :}
+.tri     o/ {: d ]] :: 20 times :} {: e ]] :: 20 times :}
+.tri2    o/ {: d ]] :: 20 times :} {: e ]] :: 20 times :}
+.kick       {: ]] ]] oo/ ]]  :: 20 times :}  {: ] oo/ ]] ]]]  :: 10 times :}
 
 68 => )
 key:        <E, @pentatonic>
 
-.bass       {: {: c# ]] d ]] :} :: 40 times :}
-.bass2      {: {: _b ]] :: 20 times :} {: a ]] :: 20 times :} :}
-.tri        {: {: _b ]] :: 20 times :} {: _a ]] :: 20 times :} :}
-.tri2       {: {: _b ]] :: 20 times :} {: _a ]] :: 20 times :} :}
-.blips      {: {: _b ]]] a ]]] }  :: 5 times :} {: b ]]] _a ]]] :: 5 times :} :: 2 times :}
-.bass2      {: {: a ]] :: 20 times :} {: _f# ]] :: 20 times :} :}
-.bass       {: {: _e ]] :: 20 times :} {: g ]] :: 20 times :} :}
-.tri     o/ {: {: a ]] :: 20 times :} {: _f# ]] :: 20 times :} :}
-.tri2   oo/ {: {: _a ]] :: 20 times :} {: f# ]] :: 20 times :} :}
+.bass       {: c# ]] d ]] :: 40 times :}
+.bass2      {: _b ]] :: 20 times :} {: a ]] :: 20 times :}
+.tri        {: _b ]] :: 20 times :} {: _a ]] :: 20 times :}
+.tri2       {: _b ]] :: 20 times :} {: _a ]] :: 20 times :}
+.blips      {: {: _b ]]] a ]]] } :: 5 times :} {: b ]]] _a ]]] :: 5 times :} :: 2 times :}
+.bass2      {: a ]] :: 20 times :} {: _f# ]] :: 20 times :}
+.bass       {: _e ]] :: 20 times :} {: g ]] :: 20 times :}
+.tri     o/ {: a ]] :: 20 times :} {: _f# ]] :: 20 times :}
+.tri2   oo/ {: _a ]] :: 20 times :} {: f# ]] :: 20 times :}
 .blips      {: {: b ]]. a ]]] }  :: 5 times :} {: _b ]]] a ]]] :: 5 times :} :: 2 times :}
-.bass2   o/ {: {: _f# ]] :: 20 times :} {: c ]] :: 20 times :} :}
-.tri     o/ {: {: d ]] :: 20 times :} {: e ]] :: 20 times :} :}
-.tri2    o/ {: {: d ]] :: 20 times :} {: e ]] :: 20 times :} :}
-.kick       {: {: ]]] ] oo/ ]]]  :: 20 times :}  {: ] oo/ ]]] ]]]  :: 10 times :} :}
+.bass2   o/ {: _f# ]] :: 20 times :} {: c ]] :: 20 times :}
+.tri     o/ {: d ]] :: 20 times :} {: e ]] :: 20 times :}
+.tri2    o/ {: d ]] :: 20 times :} {: e ]] :: 20 times :}
+.kick       {: ]]] ] oo/ ]]]  :: 20 times :}  {: ] oo/ ]]] ]]]  :: 10 times :}
 
-".skoar.play;)
+".skoar.play)
