@@ -38,77 +38,143 @@ SynthDef(\kick, {
 }).add;
 )
 
+
 (x = "
 180 => )
 
 .bass   instrument:@bass       o~~  mp
-.bass2   instrument:@bass      o~~  mp
-.kick   instrument:@kick       o~~  pp
+.bass2   instrument:@bass      o~~  mp o/
+.kick   instrument:@kick       o~~  pp o/
 
-key:       <G, @minorPentatonic>
-.bass  {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.bass2 o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.kick  {: {: ]] ]] oo/ ]] :: 4 times :} :: 2 times :}
+{! razzle<x> !!
+   key:       <!x, @minorPentatonic>
+   .bass  o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
+   .bass2 o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
+!}
 
-key:       <F, @minorPentatonic>
-.bass  o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.bass2 o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.kick  {: {: ]] ]] ]] oo/ :: 4 times :} :: 2 times :}
+{! dazzle !!
+   .kick  {: {: ]] ]] ]] ]] :: 4 times :} :: 2 times :}
+!}
 
-key:       <D#, @minorPentatonic>
-.bass  o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.bass2 o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.kick  {: {: oo/ ]] ]] ]] :: 4 times :} :: 2 times :}
+<G, F, D#, B, D#, A, C#, F, D#, B, A C#>.{: !razzle<$> !dazzle :}
 
-key:       <B, @minorPentatonic>
-.bass  o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.bass2 o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.kick  {: {: ]] oo/ ]] oo/ :: 4 times :} :: 2 times :}
+!razzle<C#>
 
-key:       <D#, @minorPentatonic>
-.bass  o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.bass2 o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.kick  {: {: ]] ]] oo/ ]] :: 4 times :} :: 2 times :}
-
-key:       <A, @minorPentatonic>
-.bass  o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.bass2 o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.kick  {: {: oo/ ]] ]] ]] :: 4 times :} :: 2 times :}
-
-key:       <C#, @minorPentatonic>
-.bass  o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.bass2 o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.kick  {: {: ]] oo/ oo/ ]] :: 4 times :} :: 2 times :}
-
-key:       <F, @minorPentatonic>
-.bass  o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.bass2 o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.kick  {: {: ]] ]] ]] oo/ :: 4 times :} :: 2 times :}
-
-key:       <D#, @minorPentatonic>
-.bass  o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.bass2 o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.kick  {: {: ]] ]] ]] ]] :: 4 times :} :: 2 times :}
-
-key:       <B, @minorPentatonic>
-.bass  o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.bass2 o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.kick  {: {: ]] ]] ]] ]] :: 4 times :} :: 2 times :}
-
-key:       <A, @minorPentatonic>
-.bass  o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.bass2 o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.kick  {: {: ]] ]] ]] ]] :: 4 times :} :: 2 times :}
-
-key:       <C#, @minorPentatonic>
-.bass  o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.bass2 o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.kick  {: {: ]] ]] ]] ]] :: 4 times :} :: 2 times :}
-
-key:       <C#, @minorPentatonic>
-.bass  o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
-.bass2 o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
 .kick  {: {: ]] ]] ]]] ]]] ]]] ]] ]]] ]]] ]]] :: 4 times :} :: 3 times :}
 
 ".skoar.play;
 )
+
+
+// @minorPentatonic only makes sense if you are using numbers as noats.
+// noats themselves are relative to root note.
+//
+// underneath, numbers are scale degrees, using the 'degree' symbol for patterns.
+// noats, use the 'note' symbol in the pattern, and won't use the scale,
+// it will use the key though, so the root note affects noats..
+// noats assume C scale..
+
+(x = "
+180 => )
+
+.bass   aSaw * aLFNoise2     o~~  mp
+.bass2   instrument:@bass      o~~  mp o/
+.kick   instrument:@kick       o~~  pp o/
+
+{! razzle<x> !!
+
+          key: <!x, @minorPentatonic>
+   .bass  o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
+   .bass2 o/ {: {: _g ]] _a# ]] a ]] f ]] :: 2 times :} {: _g ]] _a# ]] a ]] g ]] :: 2 times :} :: 2 times :}
+!}
+
+{! dazzle !!
+   .kick  {: {: ]] ]] ]] ]] :: 4 times :} :: 2 times :}
+!}
+
+<G, F, D#, B, D#, A, C#, F, D#, B, A C#>.{: !razzle<$> !dazzle :}
+
+!razzle<C#>
+
+.kick  {: {: ]] ]] ]]] ]]] ]]] ]] ]]] ]]] ]]] :: 4 times :} :: 3 times :}
+
+".skoar.play;
+)
+
+
+
+// see in this one we just do key: !x rather than key: <!x, @minorPentatonic>
+(x = "
+180 => )
+
+.bass   aLFTri * aSaw                o~~  mp
+.bass2   aLFTri * aLFNoise2         o~~  mp o/
+.kick   instrument:@kick       o~~  piano o/
+
+{! wizzle !! _g ]] _a# ]] a ]] f ]] !}
+{! wozzle !! _g ]] _a# ]] a ]] g ]] !}
+
+
+{! frazzle<wizzle, wozzle> !!
+   {: {: !wizzle :: 2 times :} {: !wozzle :: 2 times :} :: 2 times :}
+!}
+
+{! razzle<x> !!
+   key:       !x
+   .bass  o/ !frazzle
+   .bass2 o/ !frazzle
+!}
+
+{! dazzle !!
+   .kick  {: {: ]] ]] ]] ]] :: 4 times :} :: 2 times :}
+!}
+
+<G, F, D#, B, D#, A, C#, F, D#, B, A C#>.{: !razzle<$> !dazzle :}
+
+!razzle<C#>
+
+.kick  {: {: ]] ]] ]]] ]]] ]]] ]] ]]] ]]] ]]] :: 4 times :} :: 3 times :}
+
+".skoar.play;
+)
+
+
+
+// this one doesn't work, but should.
+// the numbers aren't being treated as noatworthy,
+// the fairy is failing in wizzle and wozzle.
+(x = "
+180 => )
+
+.bass   instrument:@bass                o~~  mp
+.bass2   instrument:@bass         o~~  mp o/
+.kick   instrument:@kick       o~~  piano o/
+
+{! wizzle !! 0 ]]] ooo/ 1 ]]] ooo/ 5 ]]] ooo/ 4 ]]] ooo/ !}
+{! wozzle !! 0 ]]] ooo/ 1 ]]] ooo/ 5 ]]] 4 ]]] 3 ]]] ooo/ !}
+
+
+{! frazzle !!
+   {: {: !wizzle :: 2 times :} {: !wozzle :: 2 times :} :: 2 times :}
+!}
+
+{! razzle<x> !!
+   key:       <!x, @minorPentatonic>
+   .bass  o/ !frazzle
+   .bass2 o/ !frazzle
+!}
+
+{! dazzle !!
+   .kick  {: {: ]] ]] ]] ]] :: 4 times :} :: 2 times :}
+!}
+
+<G, F, D#, B, D#, A, C#, F, D#, B, A C#>.{: !razzle<$> !dazzle :}
+
+!razzle<C#>
+
+.kick  {: {: ]] ]] ]]] ]]] ]]] ]] ]]] ]]] ]]] :: 4 times :} :: 3 times :}
+
+".skoar.play;
+)
+
+
