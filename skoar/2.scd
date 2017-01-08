@@ -115,7 +115,7 @@ SynthDef(\kick, {
 {! wozzle !! _g ]] _a# ]] a ]] g ]] !}
 
 
-{! frazzle<wizzle, wozzle> !!
+{! frazzle !!
    {: {: !wizzle :: 2 times :} {: !wozzle :: 2 times :} :: 2 times :}
 !}
 
